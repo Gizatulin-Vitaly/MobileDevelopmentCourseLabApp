@@ -1,6 +1,7 @@
 package com.example.mobiledevelopmentcourselabapp
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -11,7 +12,9 @@ import com.example.mobiledevelopmentcourselabapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+
     private var binding: ActivityMainBinding? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,11 +30,39 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_article,
-                R.id.navigation_second,
+                R.id.navigation_list,
                 R.id.navigation_third
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView?.setupWithNavController(navController)
+
+        Log.d("life_cycles", "${this::class.simpleName} - onCreate")
     }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("life_cycles", "${this::class.simpleName} - onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("life_cycles", "${this::class.simpleName} - onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("life_cycles", "${this::class.simpleName} - onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("life_cycles", "${this::class.simpleName} - onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("life_cycles", "${this::class.simpleName} - onDestroy")
+    }
+
 }
