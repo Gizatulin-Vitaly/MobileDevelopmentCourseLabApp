@@ -12,7 +12,9 @@ import com.example.mobiledevelopmentcourselabapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+
     private var binding: ActivityMainBinding? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_article,
-                R.id.navigation_second,
+                R.id.navigation_list,
                 R.id.navigation_third
             )
         )

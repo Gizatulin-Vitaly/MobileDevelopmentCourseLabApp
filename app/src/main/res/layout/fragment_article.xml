@@ -2,62 +2,68 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.view.article.ArticleFragment">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:context=".presentation.view.article.ArticleFragment">
-            <TextView
-                android:id="@+id/title"
-                style="@style/BoldText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:paddingHorizontal="16dp"
-                android:gravity="start"
-                android:text="@string/article_title"
-                />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/BoldText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:gravity="start"
+            android:paddingHorizontal="16dp"
+            android:text="@string/article_title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            tools:context=".presentation.view.article.ArticleFragment">
+
+            <ImageView
+                android:id="@+id/authorImage"
+                android:layout_width="60dp"
+                android:layout_height="match_parent" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height= "60dp"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                android:orientation="vertical"
                 android:paddingHorizontal="16dp"
-                android:orientation="horizontal"
-                tools:context=".presentation.view.article.ArticleFragment">
-                <ImageView
-                    android:id="@+id/authorImage"
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height= "match_parent"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="16dp"
-                    android:gravity="start|center"
-                    tools:context=".presentation.view.article.ArticleFragment"
-                    tools:ignore="UselessParent">
-                    <TextView
-                        android:id="@+id/author"
-                        style="@style/miniText"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:gravity="start"
-                        android:text="@string/article_author" />
+                tools:context=".presentation.view.article.ArticleFragment"
+                tools:ignore="UselessParent">
 
-                    <TextView
-                        android:id="@+id/date"
-                        style="@style/miniText"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:gravity="start"
-                        android:text="@string/article_date" />
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/author"
+                    style="@style/miniText"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="start"
+                    android:text="@string/article_author" />
+
+                <TextView
+                    android:id="@+id/date"
+                    style="@style/miniText"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="start"
+                    android:text="@string/article_date" />
             </LinearLayout>
+        </LinearLayout>
+
         <ImageView
             android:id="@+id/mainPhoto"
             android:layout_width="match_parent"
@@ -71,63 +77,70 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:paddingHorizontal="16dp"
             android:gravity="start"
+            android:paddingHorizontal="16dp"
             android:text="@string/article_text" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:background="@color/design_default_color_primary"
-            android:orientation="horizontal"
-            android:layout_marginTop="@dimen/activity_vertical_margin">
+            android:orientation="horizontal">
+
             <ImageView
                 android:id="@+id/testPhotoOne"
-                android:layout_marginStart="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
+                android:layout_marginStart="16dp"
                 android:layout_weight="1"
-                android:paddingEnd="5dp"
                 android:background="@color/design_default_color_primary"
+                android:contentDescription="TODO"
+                android:paddingEnd="5dp"
                 android:src="@drawable/android"
                 tools:ignore="RtlSymmetry" />
 
             <ImageView
                 android:id="@+id/testPhotoTwo"
-                android:layout_marginEnd="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
+                android:layout_marginEnd="16dp"
                 android:layout_weight="1"
+                android:background="@color/design_default_color_primary"
+                android:contentDescription="TODO"
                 android:paddingStart="5dp"
                 android:src="@drawable/android"
-                android:background="@color/design_default_color_primary"
                 tools:ignore="RtlSymmetry" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
+            android:layout_margin="16dp"
             android:gravity="center_vertical"
-            android:layout_margin="16dp">
+            android:orientation="horizontal">
+
             <ImageButton
                 android:id="@+id/likeBtn"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:padding="16dp"
-                android:src="@drawable/thumb_up"/>
+                android:src="@drawable/thumb_up" />
 
             <ImageButton
                 android:id="@+id/dislikeBtn"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
+                android:contentDescription="TODO"
                 android:padding="16dp"
-                android:src="@drawable/thumb_down"/>
+                android:src="@drawable/thumb_down" />
 
             <TextView
                 android:id="@+id/likeResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="0"/>
+                android:text="0" />
         </LinearLayout>
     </LinearLayout>
 
