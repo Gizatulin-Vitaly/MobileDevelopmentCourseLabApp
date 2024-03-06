@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/videocardSvg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/videocard" />
+
+    <ImageView
+        android:id="@+id/onceFan"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/fan"
+        app:layout_constraintBottom_toBottomOf="@id/videocardSvg"
+        app:layout_constraintEnd_toEndOf="@id/videocardSvg"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="@id/videocardSvg"
+        app:layout_constraintTop_toTopOf="@id/videocardSvg"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <ImageView
+        android:id="@+id/twiceFan"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/fan"
+        app:layout_constraintBottom_toBottomOf="@id/videocardSvg"
+        app:layout_constraintEnd_toEndOf="@id/videocardSvg"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="@id/videocardSvg"
+        app:layout_constraintTop_toTopOf="@id/videocardSvg"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <ImageView
+        android:id="@+id/thriceFan"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/fan"
+        app:layout_constraintBottom_toBottomOf="@id/videocardSvg"
+        app:layout_constraintEnd_toEndOf="@id/videocardSvg"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="@id/videocardSvg"
+        app:layout_constraintTop_toTopOf="@id/videocardSvg"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintWidth_percent="0.25" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

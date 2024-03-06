@@ -21,7 +21,7 @@ object Generator {
         "08455bfbbcd8f73d811c226ac5dd301a/30e5c13feb9b170f2bb6c1190cab81bd098f0604cd9a7a89e4b81d0d1d3bac37.png",
         "daf6eca5c22eeb82db0698e682d1910d/009f141fe2e802053564f67461c6315b752f23aa6de1dd0b5d1cae705b7e9ac8.png",
 
-    )
+        )
 
     fun generate(): List<ItemUiModel> {
         val faker = Faker()
@@ -34,7 +34,12 @@ object Generator {
                         price = (30000..300000).random(),
                         memory = (4..24).random(),
                         power = (500..700).random(),
-                        photoUrl = PHOTO_LINK + photos.random()
+                        photoUrl = PHOTO_LINK + photos.random(),
+                        heightCard = (120..150).random(),
+                        lengthCard = (200..350).random(),
+                        widthCard = (30..60).random(),
+                        additionalPower = (6..12).random(),
+                        fan = (1..4).random()
                     )
                 )
                 if (Random.nextBoolean()) add(AdUiModel)
