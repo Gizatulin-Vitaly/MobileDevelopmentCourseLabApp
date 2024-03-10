@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/TextAppearance.Material3.TitleLarge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/icon"
+        app:layout_constraintEnd_toStartOf="@+id/money"
+        app:layout_constraintStart_toEndOf="@+id/icon"
+        app:layout_constraintTop_toTopOf="@id/icon"
+        tools:text="RTX 3060" />
+
+    <ImageView
+        android:id="@+id/money"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/money"
+        app:layout_constraintBottom_toBottomOf="@id/icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/icon" />
+
+    <TextView
+        android:id="@+id/price"
+        style="@style/BoldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/money"
+        app:layout_constraintEnd_toEndOf="@id/money"
+        app:layout_constraintStart_toStartOf="@id/money"
+        app:layout_constraintTop_toTopOf="@id/money"
+        tools:text="10" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/headerBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="icon, name, money" />
+
+    <TextView
+        android:id="@+id/infoTitle"
+        style="@style/TextAppearance.Material3.TitleLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/infoTitle"
+        app:layout_constraintTop_toBottomOf="@id/headerBarrier" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/titlesBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:barrierMargin="24dp"
+        app:constraint_referenced_ids="frequencyTitle, powerTitle, memoryTitle" />
+
+    <TextView
+        android:id="@+id/frequencyTitle"
+        style="@style/TextAppearance.Material3.TitleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/frequenct"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/infoTitle" />
+
+    <TextView
+        android:id="@+id/frequencyValue"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/titlesBarrier"
+        app:layout_constraintTop_toTopOf="@+id/frequencyTitle"
+        tools:text="29Mhz" />
+
+    <TextView
+        android:id="@+id/powerTitle"
+        style="@style/TextAppearance.Material3.TitleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="@string/power"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frequencyTitle" />
+
+    <TextView
+        android:id="@+id/powerValue"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/titlesBarrier"
+        app:layout_constraintTop_toTopOf="@id/powerTitle"
+        tools:text="600Вт" />
+
+    <TextView
+        android:id="@+id/memoryTitle"
+        style="@style/TextAppearance.Material3.TitleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="@string/memory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/powerTitle" />
+
+    <TextView
+        android:id="@+id/memoryValue"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/titlesBarrier"
+        app:layout_constraintTop_toTopOf="@id/memoryTitle"
+        tools:text="12ГБ" />
+
+    <TextView
+        android:id="@+id/statsTitle"
+        style="@style/TextAppearance.Material3.TitleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/otherChatacters"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/memoryTitle" />
+
+    <TextView
+        android:id="@+id/heightCard"
+        style="@style/TextAppearance.Material3.TitleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_bg"
+        android:backgroundTint="@color/black_60"
+        android:padding="5dp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/lengthCard"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statsTitle"
+        tools:text="Высота: 130" />
+
+    <TextView
+        android:id="@+id/lengthCard"
+        style="@style/TextAppearance.Material3.TitleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_bg"
+        android:backgroundTint="@color/teal_200"
+        android:padding="5dp"
+        app:layout_constraintEnd_toStartOf="@id/widthCard"
+        app:layout_constraintStart_toEndOf="@id/heightCard"
+        app:layout_constraintTop_toTopOf="@id/heightCard"
+        tools:text="Длина: 300" />
+
+    <TextView
+        android:id="@+id/widthCard"
+        style="@style/TextAppearance.Material3.TitleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_bg"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lengthCard"
+        app:layout_constraintTop_toTopOf="@id/heightCard"
+        tools:text="Ширина: 40" />
+
+    <TextView
+        android:id="@+id/additionalPower"
+        style="@style/TextAppearance.Material3.TitleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/rounded_bg"
+        android:backgroundTint="@color/yellow_200"
+        android:padding="5dp"
+        app:layout_constraintEnd_toStartOf="@id/lengthCard"
+        app:layout_constraintStart_toEndOf="@id/heightCard"
+        app:layout_constraintTop_toBottomOf="@id/heightCard"
+        tools:text="Доп.питание: 12" />
+
+    <TextView
+        android:id="@+id/fan"
+        style="@style/TextAppearance.Material3.TitleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_bg"
+        android:backgroundTint="@color/red_200"
+        android:padding="5dp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/widthCard"
+        app:layout_constraintStart_toEndOf="@id/lengthCard"
+        app:layout_constraintTop_toBottomOf="@id/heightCard"
+        tools:text="Вентиляторы: 3" />
+
+    <include
+        android:id="@+id/field"
+        layout="@layout/item_card_pitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fan" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

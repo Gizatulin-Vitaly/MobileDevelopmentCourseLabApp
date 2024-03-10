@@ -11,7 +11,9 @@ import com.example.mobiledevelopmentcourselabapp.presentation.view.list.model.Ad
 import com.example.mobiledevelopmentcourselabapp.presentation.view.list.model.CardUiModel
 import com.example.mobiledevelopmentcourselabapp.presentation.view.list.model.ItemUiModel
 
-class CardAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CardAdapter(
+    private val onCardClicked: (CardUiModel) -> Unit
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var items: List<ItemUiModel> = arrayListOf()
 
@@ -47,8 +49,7 @@ class CardAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             holder.bind(item)
 
             holder.setOnClickListener {
-                item.isExpanded = !item.isExpanded
-                notifyItemChanged(position, "expanded_state")
+                onCardClicked.invoke(item)
             }
         }
     }
@@ -56,8 +57,7 @@ class CardAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemCount(): Int = items.size
 
 
-
-    class CardHolder(private val binding: ItemCardBinding): RecyclerView.ViewHolder(binding.root) {
+    class CardHolder(private val binding: ItemCardBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(card: CardUiModel) {
             binding.name.text = card.formattedName.toString()
