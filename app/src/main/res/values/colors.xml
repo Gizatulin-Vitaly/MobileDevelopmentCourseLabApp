@@ -10,5 +10,6 @@
     <color name="yellow_200">#FFFFEB3B</color>
     <color name="red_200">#FFFF5252</color>
     <color name="black_60">#99000000</color>
+    <color name="silver">#C0C0C0</color>
 
 </resources>

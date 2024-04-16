@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView?.setupWithNavController(navController)
 
-        Log.d("life_cycles", "${this::class.simpleName} - onCreate")
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -54,31 +53,6 @@ class MainActivity : AppCompatActivity() {
             return true
         }
         return false
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.d("life_cycles", "${this::class.simpleName} - onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("life_cycles", "${this::class.simpleName} - onResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d("life_cycles", "${this::class.simpleName} - onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("life_cycles", "${this::class.simpleName} - onStop")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("life_cycles", "${this::class.simpleName} - onDestroy")
     }
 
 }

@@ -58,6 +58,7 @@
         android:src="@drawable/icon_send"
         app:layout_constraintBottom_toBottomOf="@id/commentInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/commentInput" />
+        app:layout_constraintTop_toTopOf="@id/commentInput"
+        app:tint="@color/image_button_state" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
