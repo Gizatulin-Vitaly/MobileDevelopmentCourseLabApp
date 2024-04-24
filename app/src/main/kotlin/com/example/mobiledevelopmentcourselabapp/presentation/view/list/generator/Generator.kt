@@ -20,7 +20,6 @@ object Generator {
         "b313fd30b6c1e5f3680eb137e0d20d9d/d647bc3e9cda8b9133a9e48ea2cb835730c701270170801fd0e66164c8e0484b.png",
         "08455bfbbcd8f73d811c226ac5dd301a/30e5c13feb9b170f2bb6c1190cab81bd098f0604cd9a7a89e4b81d0d1d3bac37.png",
         "daf6eca5c22eeb82db0698e682d1910d/009f141fe2e802053564f67461c6315b752f23aa6de1dd0b5d1cae705b7e9ac8.png",
-
         )
 
     fun generate(): List<ItemUiModel> {
@@ -42,40 +41,8 @@ object Generator {
                         fan = (1..4).random()
                     )
                 )
-                if (Random.nextBoolean()) add(AdUiModel)
             }
         }
     }
 }
 
-
-//
-//import com.example.mobiledevelopmentcourselabapp.presentation.view.list.model.CardUiModel
-//import kotlinx.coroutines.Dispatchers
-//import kotlinx.coroutines.withContext
-//import org.jsoup.Jsoup
-//
-//object Generator {
-//
-//    suspend fun generate(): List<CardUiModel> {
-//        return withContext(Dispatchers.IO) {
-//            val url = "https://www.citilink.ru/catalog/videokarty/"
-//            val doc = Jsoup.connect(url).get()
-//            val elements = doc.select(".ehanbgo0 app-catalog-1w7tb29 e1loosed0")
-//            val cardList = mutableListOf<CardUiModel>()
-//
-//            for (element in elements) {
-//                val name = element.select(".app-catalog-9gnskf").text()
-//                val frequency = element.select("app-catalog-17ju59h").text().toIntOrNull() ?: 0
-//                val price = element.select(".app-catalog-0 eb8dq160").text().toIntOrNull() ?: 0
-//                val memory = element.select(".e4qu3681.e106ikdt0.app-catalog-dnboej.e1gjr6xo0").text().toIntOrNull() ?: 0
-//                val power = element.select(".app-catalog-17ju59h.e4qu3682").text().toIntOrNull() ?: 0
-//                val photoUrl = "https://img.a.transfermarkt.technology/portrait/medium/709726-1672304545.jpg"
-//                val card = CardUiModel(name, photoUrl, price, frequency, memory, power )
-//                cardList.add(card)
-//            }
-//
-//            cardList
-//        }
-//    }
-//}
