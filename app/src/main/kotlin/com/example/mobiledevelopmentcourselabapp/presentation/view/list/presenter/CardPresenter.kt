@@ -26,7 +26,24 @@ class CardPresenter @Inject constructor(): MvpPresenter<CardMvpView>() {
         )
     }
 
-    fun onCommentChanged(text: CharSequence?){
-        viewState.setSendButtonEnabled(text?.isNotBlank().orFalse())
+    private fun setSendButtonEnabled(isEnabled: Boolean) {
+        viewState.setSendButtonEnabled(isEnabled)
     }
+    fun onCommentChanged(text: CharSequence?) {
+        message = text.toString()
+        val isSendButtonEnabled = text?.isNotBlank().orFalse()
+        setSendButtonEnabled(isSendButtonEnabled)
+    }
+
+    fun onSendButtonClicked() {
+        if (message?.equals("ошибка").orFalse()) {
+            viewState.setMessageError("Это ошибка!")}
+            else{
+            message?.let {
+                viewState.addComment(it)
+                viewState.showSnackbar()
+            }
+        }
+    }
+
 }

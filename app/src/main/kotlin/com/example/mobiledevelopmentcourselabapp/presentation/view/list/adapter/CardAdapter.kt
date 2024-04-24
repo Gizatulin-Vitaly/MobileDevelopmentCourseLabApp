@@ -34,14 +34,6 @@ class CardAdapter(
         }
     }
 
-    override fun getItemViewType(position: Int): Int {
-        return when (items[position]) {
-            is CardUiModel -> CARD_ID
-            AdUiModel -> AD_ID
-            else -> AD_ID
-        }
-    }
-
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = items[position]
 

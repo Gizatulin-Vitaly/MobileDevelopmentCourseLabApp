@@ -38,17 +38,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:constraint_referenced_ids="commentInput, sendButton"
+        app:constraint_referenced_ids="commentInputLayout, sendButton"
         tools:visibility="visible"/>
-    
-    <EditText
-        android:id="@+id/commentInput"
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/commentInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/offset_small"
-        app:layout_constraintEnd_toEndOf="@id/sendButton"
+        app:layout_constraintEnd_toStartOf="@id/sendButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/commentTitle" />
+        app:layout_constraintTop_toBottomOf="@id/commentTitle"
+        android:layout_marginEnd="@dimen/offset_small">
+    </com.google.android.material.textfield.TextInputEditText>
 
     <ImageButton
         android:id="@+id/sendButton"
@@ -56,9 +57,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/icon_send"
-        app:layout_constraintBottom_toBottomOf="@id/commentInput"
+        app:layout_constraintBottom_toBottomOf="@id/commentInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/commentInput"
+        app:layout_constraintTop_toTopOf="@id/commentInputLayout"
         app:tint="@color/image_button_state" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/commentsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/commentInputLayout"
+        app:reverseLayout="true" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
